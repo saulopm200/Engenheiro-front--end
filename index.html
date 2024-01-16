@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de cadastro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fira+Sans:wght@400;700&family=Inter:wght@400;500&family=Nunito+Sans:wght@400;700&family=Nunito:ital@1&family=Poppins:ital,wght@0,600;1,400&family=Roboto:ital,wght@0,400;0,500;0,700;1,100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Formulário de cadastro</h1>
+    </header>
+
+    <form>
+      <div class="form-group">
+        <label for="name">Nome completo</label>
+        <input type="text" id="name" name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email">
+      </div>
+
+      <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" name="telefone">
+      </div>
+
+      <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input type="text" id="cpf" name="cpf" required>
+      </div>
+
+      <div class="form-group">
+        <label for="endereco">Endereco Completo</label>
+        <input type="endereco" name="endereco">
+      </div>
+
+      <div class="form-group">
+        <label for="endereco">Endereço Completo</label>
+        <input type="text" id="endereco" name="endereco">
+      </div>
+
+      <div class="form-group">
+        <label for="cep">CEP</label>
+        <input type="text" id="cep" name="cep">
+      </div>
+
+      <div class="form-group">
+        <button type="submit" id="btn-submit">Enviar</button>
+        <button id="botao-cancelar" type="reset">Cancelar</button>
+      </div>
+    </form>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="./js/jquery.mask.min.js"></script>
+  <script src="./main.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $("header button").click(function () {
+        // Code to execute when the header button is clicked
+      });
+
+      $("form").on("submit", function (e) {
+        console.log("submit");
+        e.preventDefault(); // Prevent the default form submission behavior
+      });
+
+
+      // aplicar a mascara no campo telefone
+      $("#telefone").mask("(00)000000-0000");
+
+
+      // Aplicar a máscara no campo de CPF
+      $("#cpf").mask("000.000.000-00");
+
+      // Aplicar a máscara no campo de CEP
+      $("#cep").mask("00000-000");
+    });
+  </script>
+</body>
+
+</html>
